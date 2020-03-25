@@ -58,7 +58,7 @@ func Execute() {
 
 func init() {
 	cobra.OnInitialize(initConfig)
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.process-launcher.yaml)")
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.aws-cleanup.yaml)")
 	rootCmd.PersistentFlags().BoolVar(&loglevel, "debug", false, "Set log level to Debug")
 	rootCmd.PersistentFlags().BoolVar(&version, "version", false, "version")
 

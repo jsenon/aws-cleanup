@@ -34,7 +34,7 @@ Available Commands:
   help        Help about any command
 
 Flags:
-      --config string   config file (default is $HOME/.process-launcher.yaml)
+      --config string   config file (default is $HOME/.aws-cleanup.yaml)
       --debug           Set log level to Debug
   -h, --help            help for aws-cleanup
       --version         version

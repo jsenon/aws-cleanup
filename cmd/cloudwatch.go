@@ -39,7 +39,7 @@ var daysls int
 
 const deltaN = 2
 
-// rootCmd represents the base command when called without any subcommands
+// cloudwatchCmd represents the sub command when called with cloudwatch
 var cloudwatchCmd = &cobra.Command{
 	Use:   "cloudwatch",
 	Short: "cloudwatch cleaning",
