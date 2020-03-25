@@ -99,8 +99,13 @@ func cloudwatchLaunch() {
 	daysLg := viper.GetInt("DAYSLOGGROUP")
 	daysLs := viper.GetInt("DAYSLOGSTREAM")
 
-	log.Debug().Msgf("LogGroup deletion after: %v, LogStream deletion after: %v, LogStreamName deletion: %v",
-		daysLg, daysLs, logSName)
+	if logSName == "all" {
+		log.Debug().Msgf("LogGroup deletion after: %v, LogStream deletion after: %v, LogsGroupName deletion: %v",
+			daysLg, daysLs, logSName)
+	} else {
+		log.Debug().Msgf("LogStream deletion after: %v, LogsGroupName deletion: %v",
+			daysLs, logSName)
+	}
 
 	// Launch cloudwatch cleaning
 	// if variable has been set
