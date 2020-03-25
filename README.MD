@@ -22,7 +22,25 @@ You can have a look on [Makefile](Makefile),in order to launch linter or swagger
 ### Usage
 
 
+```
+Cleaning AWS Object like cloudwatch log stream
 
+Usage:
+  aws-cleanup [flags]
+  aws-cleanup [command]
+
+Available Commands:
+  cloudwatch  cloudwatch cleaning
+  help        Help about any command
+
+Flags:
+      --config string   config file (default is $HOME/.process-launcher.yaml)
+      --debug           Set log level to Debug
+  -h, --help            help for aws-cleanup
+      --version         version
+
+Use "aws-cleanup [command] --help" for more information about a command.
+```
 
 
 
