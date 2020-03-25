@@ -33,7 +33,7 @@ import (
 	mylog "github.com/jsenon/aws-cleanup/internal/log"
 )
 
-var logstreamname string
+var logsgroupname string
 var dayslg int
 var daysls int
 
@@ -65,12 +65,12 @@ var cloudwatchCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(cloudwatchCmd)
-	cloudwatchCmd.PersistentFlags().StringVar(&logstreamname, "logstreamname", "all",
-		"Logstreamname to delete")
+	cloudwatchCmd.PersistentFlags().StringVar(&logsgroupname, "logsgroupname", "all",
+		"Logs group name to delete")
 
-	err := viper.BindPFlag("logstreamname", cloudwatchCmd.PersistentFlags().Lookup("logstreamname"))
+	err := viper.BindPFlag("logsgroupname", cloudwatchCmd.PersistentFlags().Lookup("logsgroupname"))
 	if err != nil {
-		log.Error().Msgf("Error binding logstreamname: %v", err.Error())
+		log.Error().Msgf("Error binding logsgroupname: %v", err.Error())
 	}
 
 	cloudwatchCmd.PersistentFlags().IntVar(&dayslg, "dayslg", 90,
@@ -95,7 +95,7 @@ func init() {
 func cloudwatchLaunch() {
 	log.Info().Msgf("Debug Mode: %t", viper.GetBool("LOGLEVEL"))
 
-	logSName := viper.GetString("LOGSTREAMNAME")
+	logSName := viper.GetString("LOGSGROUPNAME")
 	daysLg := viper.GetInt("DAYSLOGGROUP")
 	daysLs := viper.GetInt("DAYSLOGSTREAM")
 
