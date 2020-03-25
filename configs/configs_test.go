@@ -10,8 +10,8 @@ func TestConst(t *testing.T) {
 	Convey("Test Constant", t, func() {
 		serv := Service
 		desc := Description
-		So(serv, ShouldEqual, "process-launcher")
-		So(desc, ShouldEqual, "Transpose TM works into Kubernetes Job")
+		So(serv, ShouldEqual, "aws-cleanup")
+		So(desc, ShouldEqual, "Cleaning AWS")
 		So(Version, ShouldHaveSameTypeAs, "asdf")
 		So(GitCommit, ShouldHaveSameTypeAs, "asdf")
 		So(BuildDate, ShouldHaveSameTypeAs, "asdf")
